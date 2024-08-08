@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueKords - Best way to read music!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <script>
+        function showSuggestions(str) {
+            if (str.length == 0) {
+                document.getElementById("suggestions").innerHTML = "";
+                return;
+            }
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    const results = JSON.parse(this.responseText);
+                    let suggestionsHtml = "";
+                    results.forEach(result => {
+                        suggestionsHtml += `<div><a href="view_song.php?id=${result.id}">${result.title} by ${result.artist}</a></div>`;
+                    });
+                    document.getElementById("suggestions").innerHTML = suggestionsHtml;
+                }
+            }
+            xhr.open("GET", "search_suggestions.php?q=" + str, true);
+            xhr.send();
+        }
+
+        function selectSong(title, artist) {
+            document.querySelector("input[name='q']").value = title + " by " + artist;
+            document.getElementById("suggestions").innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="logo">
+        </div>
+    </header>
+    <div class="container">
+        <form action="search.php" class="search-bar" method="GET">
+            <input type="text" placeholder="Tìm kiếm tên bài hát, nghệ sĩ,..." name="q" onkeyup="showSuggestions(this.value)">
+            <button type="submit"><img src="images/search.gif"></button>
+        </form>
+        <div id="suggestions" class="search-results"></div>
+    </div>
+</body>
+</html>

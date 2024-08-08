@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# Rewrite rule for song pages
+RewriteRule ^view_song.php?id=([0-9]+)$ view_song.php?id=$1 [L]

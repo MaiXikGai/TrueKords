@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(212, 212, 212, 0.9),rgba(170, 175, 179, 0.9)), url(images/index_background.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo img {
+    max-width: 200px; 
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px;
+    background-position: center;
+    background-size: cover;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 700px;
+    background: rgb(87, 85, 85);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.search-bar input::placeholder {
+    color: #ffffff;
+}
+
+.search-bar button {
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.search-bar button img {
+    width: 40px;
+}
+
+.search-results {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 10px 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.suggestion-item a:hover {
+    background-color: #f0f0f0;
+}

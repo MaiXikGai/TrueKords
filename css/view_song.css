@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0; /* Adjusted padding to make the header smaller */
+    background-color: #333;
+    color: white;
+}
+
+.logo img {
+    max-width: 150px; /* Adjusted the max-width to make the logo smaller */
+    height: auto;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto; /* Added auto to left and right margins to center the container */
+}
+
+.song-container {
+    flex: 1;
+    max-width: 800px; /* Set a maximum width to center the lyrics */
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+.video-container {
+    flex: 0 0 280px; /* Decreased the size of the video container */
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.root-tone {
+    font-size: 16pt;
+    margin-bottom: 20px; /* Add some space between the tone and controls */
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+button.active {
+    background-color: #555;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.font-size-controls {
+    display: flex;
+    align-items: center;
+}
+
+.font-size-controls button {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.font-size-controls button:hover {
+    background-color: #555;
+}
+
+.font-size-controls span {
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.image-size-controls {
+    display: flex;
+    align-items: center;
+}
+
+.image-size-controls button {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-size-controls button:hover {
+    background-color: #555;
+}
+
+.image-size-controls span {
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.lyrics {
+    column-count: 1;
+    column-gap: 40px;
+    font-size: 16px; /* Default font size */
+    text-align: justify;
+}
+
+.lyrics.two-columns {
+    column-count: 2;
+}
+
+.chord {
+    color: red;
+    font-weight: bold;
+    margin-right: 5px;
+    cursor: pointer; /* Indicate that chords are clickable */
+}
+
+.score {
+    text-align: center;
+}
